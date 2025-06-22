@@ -265,7 +265,7 @@ if __name__ == "__main__":
     force_box = cft.Box(2, N*2, B_m.L)
     za = Zeldovich(B_m, force_box, EdS, phi)
     state = za.state(0.02)
-    system = PoissonVlasov(force_box, EdS, za.particle_mass, live_plot=True)
+    system = PoissonVlasov(force_box, EdS, za.particle_mass, live_plot=False)
     stepper = partial(leap_frog, 0.02, system)
     iterate_step(stepper, lambda s: s.time > 4.0, state)
 # ~\~ end
