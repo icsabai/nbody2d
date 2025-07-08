@@ -23,8 +23,10 @@ class Cosmology:
     def OmegaK(self):
         return 1 - self.OmegaM - self.OmegaL
     @property
+    ### TODO: Do we need to change this too?
     def G(self):
         return 3./2 * self.OmegaM * self.H0**2
+    ### TODO: explicit solution, we have to replace it
     def da(self, a):
         return self.H0 * a * np.sqrt(
                   self.OmegaL \
